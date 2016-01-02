@@ -1,0 +1,442 @@
+Analysis & Synthesis report for Lab5
+Thu Jul 16 16:55:15 2015
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |Lab5|state
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "SevenSegment:D7S2"
+ 13. Port Connectivity Checks: "SevenSegment:D7S0"
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 16 16:55:15 2015    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; Lab5                                     ;
+; Top-level Entity Name              ; Lab5                                     ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 169                                      ;
+;     Total combinational functions  ; 169                                      ;
+;     Dedicated logic registers      ; 82                                       ;
+; Total registers                    ; 82                                       ;
+; Total pins                         ; 60                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                          ; Lab5               ; Lab5               ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                              ;
++----------------------------------+-----------------+-----------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path ;
++----------------------------------+-----------------+-----------------+------------------------------+
+; Lab5.vhd                         ; yes             ; User VHDL File  ; N:/ECE124/Lab5/Lab5.vhd      ;
++----------------------------------+-----------------+-----------------+------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 169      ;
+;                                             ;          ;
+; Total combinational functions               ; 169      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 57       ;
+;     -- 3 input functions                    ; 21       ;
+;     -- <=2 input functions                  ; 91       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 98       ;
+;     -- arithmetic mode                      ; 71       ;
+;                                             ;          ;
+; Total registers                             ; 82       ;
+;     -- Dedicated logic registers            ; 82       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 60       ;
+; Maximum fan-out node                        ; clock_50 ;
+; Maximum fan-out                             ; 46       ;
+; Total fan-out                               ; 653      ;
+; Average fan-out                             ; 2.10     ;
++---------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; |Lab5                      ; 169 (156)         ; 82 (82)      ; 0           ; 0            ; 0       ; 0         ; 60   ; 0            ; |Lab5                   ; work         ;
+;    |SevenSegment:D7S0|     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab5|SevenSegment:D7S0 ; work         ;
+;    |SevenSegment:D7S2|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Lab5|SevenSegment:D7S2 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab5|state                                                                            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state.STATE5 ; state.STATE4 ; state.STATE3 ; state.STATE2 ; state.STATE1 ; state.STATE0 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; state.STATE0 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state.STATE1 ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; state.STATE2 ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; state.STATE3 ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; state.STATE4 ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; state.STATE5 ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ledr[0]$latch                                       ; Selector10          ; yes                    ;
+; ledr[11]$latch                                      ; Selector10          ; yes                    ;
+; ledg[7]$latch                                       ; Selector10          ; yes                    ;
+; ledg[8]$latch                                       ; Selector10          ; yes                    ;
+; next_state.STATE2_863                               ; Selector11          ; yes                    ;
+; next_state.STATE3_831                               ; Selector11          ; yes                    ;
+; next_state.STATE4_799                               ; Selector11          ; yes                    ;
+; next_state.STATE5_767                               ; Selector11          ; yes                    ;
+; next_state.STATE0_927                               ; Selector11          ; yes                    ;
+; next_state.STATE1_895                               ; Selector11          ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                   ;
++---------------------------------------+------------------------------+
+; Register name                         ; Reason for Removal           ;
++---------------------------------------+------------------------------+
+; state_counter[0]                      ; Merged with state_time[0]    ;
+; state_counter[1]                      ; Merged with state_time[1]    ;
+; state_counter[2]                      ; Merged with state_time[2]    ;
+; state_counter[3]                      ; Merged with state_time[3]    ;
+; bin_counter[0]                        ; Merged with tenHz_counter[0] ;
+; bin_counter[1]                        ; Merged with tenHz_counter[1] ;
+; bin_counter[2]                        ; Merged with tenHz_counter[2] ;
+; bin_counter[3]                        ; Merged with tenHz_counter[3] ;
+; bin_counter[4]                        ; Merged with tenHz_counter[4] ;
+; Total Number of Removed Registers = 9 ;                              ;
++---------------------------------------+------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 82    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Lab5|Selector10           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "SevenSegment:D7S2" ;
++----------+-------+----------+-----------------+
+; Port     ; Type  ; Severity ; Details         ;
++----------+-------+----------+-----------------+
+; blanking ; Input ; Info     ; Stuck at GND    ;
++----------+-------+----------+-----------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "SevenSegment:D7S0" ;
++-----------+-------+----------+----------------+
+; Port      ; Type  ; Severity ; Details        ;
++-----------+-------+----------+----------------+
+; datain[3] ; Input ; Info     ; Stuck at GND   ;
+; blanking  ; Input ; Info     ; Stuck at GND   ;
++-----------+-------+----------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Jul 16 16:55:11 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab5 -c Lab5
+Warning: Can't analyze file -- file N:/ECE124/Lab2/Lab5.vhd is missing
+Info: Found 4 design units, including 2 entities, in source file Lab5.vhd
+    Info: Found design unit 1: SevenSegment-Behavioral
+    Info: Found design unit 2: Lab5-SimpleCircuit
+    Info: Found entity 1: SevenSegment
+    Info: Found entity 2: Lab5
+Info: Elaborating entity "Lab5" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(129): signal "FlHzModCLK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(155): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(155): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(155): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(155): signal "CarSensorEW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(157): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(157): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(161): signal "FlHzModCLK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(170): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(170): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(170): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(170): signal "CarSensorEW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(172): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(172): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(185): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(185): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(185): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(185): signal "CarSensorEW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(187): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(187): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(188): signal "FlHzModCLK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(200): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(200): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(200): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(200): signal "CarSensorNS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(202): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(202): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(205): signal "FlHzModCLK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(215): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(215): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(215): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(215): signal "CarSensorNS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(217): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(217): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(230): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(230): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(230): signal "DefaultSide" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(230): signal "CarSensorNS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(232): signal "state_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(232): signal "OperationMode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Lab5.vhd(234): signal "FlHzModCLK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Lab5.vhd(149): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Lab5.vhd(149): inferring latch(es) for signal or variable "ledr", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Lab5.vhd(149): inferring latch(es) for signal or variable "ledg", which holds its previous value in one or more paths through the process
+Warning (10873): Using initial value X (don't care) for net "ledr[17]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[16]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[15]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[14]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[13]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[12]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[10]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[9]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[8]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[7]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[6]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[5]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[4]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[3]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[2]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledr[1]" at Lab5.vhd(63)
+Warning (10873): Using initial value X (don't care) for net "ledg[6]" at Lab5.vhd(64)
+Warning (10873): Using initial value X (don't care) for net "ledg[5]" at Lab5.vhd(64)
+Warning (10873): Using initial value X (don't care) for net "ledg[4]" at Lab5.vhd(64)
+Warning (10873): Using initial value X (don't care) for net "ledg[3]" at Lab5.vhd(64)
+Info (10041): Inferred latch for "ledg[7]" at Lab5.vhd(149)
+Info (10041): Inferred latch for "ledg[8]" at Lab5.vhd(149)
+Info (10041): Inferred latch for "ledr[0]" at Lab5.vhd(149)
+Info (10041): Inferred latch for "ledr[11]" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE5" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE4" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE3" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE2" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE1" at Lab5.vhd(149)
+Info (10041): Inferred latch for "next_state.STATE0" at Lab5.vhd(149)
+Info: Elaborating entity "SevenSegment" for hierarchy "SevenSegment:D7S0"
+Warning: Latch ledr[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE3
+Warning: Latch ledr[11]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE0
+Warning: Latch ledg[7]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE4
+Warning: Latch ledg[8]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE1
+Warning: Latch next_state.STATE2_863 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE2
+Warning: Latch next_state.STATE3_831 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE3
+Warning: Latch next_state.STATE4_799 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE4
+Warning: Latch next_state.STATE5_767 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE5
+Warning: Latch next_state.STATE0_927 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE5
+Warning: Latch next_state.STATE1_895 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state.STATE1
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[1]" is stuck at GND
+    Warning (13410): Pin "ledr[2]" is stuck at GND
+    Warning (13410): Pin "ledr[3]" is stuck at GND
+    Warning (13410): Pin "ledr[4]" is stuck at GND
+    Warning (13410): Pin "ledr[5]" is stuck at GND
+    Warning (13410): Pin "ledr[6]" is stuck at GND
+    Warning (13410): Pin "ledr[7]" is stuck at GND
+    Warning (13410): Pin "ledr[8]" is stuck at GND
+    Warning (13410): Pin "ledr[9]" is stuck at GND
+    Warning (13410): Pin "ledr[10]" is stuck at GND
+    Warning (13410): Pin "ledr[12]" is stuck at GND
+    Warning (13410): Pin "ledr[13]" is stuck at GND
+    Warning (13410): Pin "ledr[14]" is stuck at GND
+    Warning (13410): Pin "ledr[15]" is stuck at GND
+    Warning (13410): Pin "ledr[16]" is stuck at GND
+    Warning (13410): Pin "ledr[17]" is stuck at GND
+    Warning (13410): Pin "ledg[3]" is stuck at GND
+    Warning (13410): Pin "ledg[4]" is stuck at GND
+    Warning (13410): Pin "ledg[5]" is stuck at GND
+    Warning (13410): Pin "ledg[6]" is stuck at GND
+Warning: Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[0]"
+    Warning (15610): No output dependent on input pin "sw[1]"
+    Warning (15610): No output dependent on input pin "sw[2]"
+    Warning (15610): No output dependent on input pin "sw[3]"
+    Warning (15610): No output dependent on input pin "sw[4]"
+    Warning (15610): No output dependent on input pin "sw[5]"
+    Warning (15610): No output dependent on input pin "sw[6]"
+    Warning (15610): No output dependent on input pin "sw[7]"
+    Warning (15610): No output dependent on input pin "sw[8]"
+    Warning (15610): No output dependent on input pin "sw[9]"
+    Warning (15610): No output dependent on input pin "sw[10]"
+    Warning (15610): No output dependent on input pin "sw[11]"
+    Warning (15610): No output dependent on input pin "sw[12]"
+    Warning (15610): No output dependent on input pin "sw[17]"
+Info: Implemented 234 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 41 output pins
+    Info: Implemented 174 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 121 warnings
+    Info: Peak virtual memory: 238 megabytes
+    Info: Processing ended: Thu Jul 16 16:55:15 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
